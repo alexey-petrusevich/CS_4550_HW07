@@ -18,6 +18,7 @@ defmodule EventAppWeb.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/events", EventController
   end
 
   # Other scopes may use custom stacks.

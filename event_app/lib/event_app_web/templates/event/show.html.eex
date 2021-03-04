@@ -1,0 +1,43 @@
+<h1>Show Event</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @event.name %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </li>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @event.link %>
+  </li>
+
+  <li>
+    <strong>Updates:</strong>
+    <%= @event.updates %>
+  </li>
+
+  <li>
+    <strong>Responses:</strong>
+    <%= @event.responses %>
+  </li>
+
+  <li>
+    <strong>Comments:</strong>
+    <%= @event.comments %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>
+<span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>
