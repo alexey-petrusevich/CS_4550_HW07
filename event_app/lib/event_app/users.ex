@@ -101,4 +101,14 @@ defmodule EventApp.Users do
   def change_user(%User{} = user, attrs \\ %{}) do
     User.changeset(user, attrs)
   end
+
+
+  # below get_user!
+  def get_user(id), do: Repo.get(User, id)
+
+  def get_user_by_name(name) do
+    Repo.get_by(User, name: name)
+  end
+
+
 end
