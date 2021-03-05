@@ -4,35 +4,45 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
-
+<div class="col">
+    <div class="row">
   <%= label f, :name %>
   <%= text_input f, :name %>
   <%= error_tag f, :name %>
-
+    </div>
+<div class="row">
   <%= label f, :date %>
   <%= datetime_select f, :date %>
   <%= error_tag f, :date %>
-
+</div>
+    <div class="row">
   <%= label f, :description %>
   <%= textarea f, :description %>
   <%= error_tag f, :description %>
-
+    </div>
+    <!--
+    <div class="row">
   <%= label f, :link %>
   <%= text_input f, :link %>
   <%= error_tag f, :link %>
-
+    </div>
+    <div class="row">
   <%= label f, :updates %>
   <%= multiple_select f, :updates, ["Option 1": "option1", "Option 2": "option2"] %>
   <%= error_tag f, :updates %>
-
+    </div>
+    <div class="row">
   <%= label f, :responses %>
   <%= text_input f, :responses %>
   <%= error_tag f, :responses %>
-
+    </div>
+    <div class="row">
   <%= label f, :comments %>
   <%= text_input f, :comments %>
   <%= error_tag f, :comments %>
-
+    </div>
+    -->
+</div>
   <div>
     <%= submit "Save" %>
   </div>

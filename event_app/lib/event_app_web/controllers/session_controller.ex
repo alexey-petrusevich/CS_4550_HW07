@@ -1,8 +1,10 @@
 defmodule EventAppWeb.SessionController do
   use EventAppWeb, :controller
 
-  def create(conn, %{"name" => name}) do
-    user = EventApp.Users.get_user_by_name(name)
+  def create(conn, %{"name" => name, "email" => email}) do
+    # changed search by both username and email
+    user = EventApp.Users.get_user_by_name_and_email(name, email)
+    # if user not nil, store session and redirect back to index
     if user do
       conn
       |> put_session(:user_id, user.id)

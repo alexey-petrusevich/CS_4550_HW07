@@ -12,45 +12,43 @@
 <body>
 <div role="main" class="container">
     <div class="row">
-        <div class="col">
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-            <p><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></p>
-            <% end %>
-        </div>
-
         <div class="row">
+            <!--
             <div class="col my-2">
                 <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
                 <p><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></p>
                 <% end %>
             </div>
+            -->
+            <!-- If connections stores info about current user -->
             <%= if @conn.assigns[:current_user] do %>
             <div class="col">
                 User: <%= @current_user.name %> |
                 <%= link("Logout", to: Routes.session_path(@conn, :delete),
               method: :delete) %>
             </div>
+
             <% else %>
             <div class="col">
                 <%= form_for @conn, Routes.session_path(@conn, :create),
             [class: "form-inline"], fn f -> %>
-                <%= text_input f, :name, class: "form-control" %>
+                <div class="row">
+                    <%= label f, :name %>
+                    <%= text_input f, :name, class: "form-control" %>
+                </div>
+                <div class="row">
+                    <%= label f, :email %>
+                    <%= text_input f, :email, class: "form-control" %>
+                </div>
                 <%= submit "Login", class: "btn btn-secondary" %>
-            <% end %>
+
+
+                <% end %>
             </div>
             <div class="col my-2">
                 <p><%= link "Register", to: Routes.user_path(@conn, :new) %></p>
             </div>
-            <% end %>
-        </div>
 
-
-        <div>
-            <%= if get_flash(@conn, :info) do %>
-            <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-            <% end %>
-            <%= if get_flash(@conn, :error) do %>
-            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
             <% end %>
         </div>
 
