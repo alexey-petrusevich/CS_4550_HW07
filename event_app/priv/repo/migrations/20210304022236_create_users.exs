@@ -1,3 +1,4 @@
+# based on lecture notes of professor Nat Tuck
 defmodule EventApp.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 

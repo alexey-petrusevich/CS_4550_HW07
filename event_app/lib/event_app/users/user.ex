@@ -1,3 +1,4 @@
+# based on lecture notes of professor Nat Tuck
 defmodule EventApp.Users.User do
   use Ecto.Schema
   import Ecto.Changeset

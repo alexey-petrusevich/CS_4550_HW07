@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/event_app/application.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/application.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app/events.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/events.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app/events/event.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/events/event.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app/users.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/users.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app/users/user.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/users/user.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/page_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/page_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/session_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/session_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/endpoint.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/endpoint.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/plugs/fetch_session.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/plugs/fetch_session.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20210304022236_create_users.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20210304022236_create_users.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20210304024903_create_events.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20210304024903_create_events.exs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="CLEAR_OUTPUT_DIRECTORY" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1pGqC5DRjHRRBxyWhziGJ9yL1UQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/event_app_web/plugs" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/event_app_web/plugs" />
+      <recent name="$PROJECT_DIR$/lib/event_app_web/controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="" />
+      <created>1614819643883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614819643883</updated>
+      <workItem from="1614819645267" duration="2595000" />
+      <workItem from="1614822378409" duration="1100000" />
+      <workItem from="1614824502780" duration="4329000" />
+      <workItem from="1614910138803" duration="3263000" />
+      <workItem from="1614965136861" duration="15857000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

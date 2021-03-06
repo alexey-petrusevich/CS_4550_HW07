@@ -1,3 +1,4 @@
+# based on lecture notes of professor Nat Tuck
 defmodule EventAppWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :event_app
 

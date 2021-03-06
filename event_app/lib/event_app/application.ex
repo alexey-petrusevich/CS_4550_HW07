@@ -1,3 +1,4 @@
+# based on lecture notes of professor Nat Tuck
 defmodule EventApp.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications

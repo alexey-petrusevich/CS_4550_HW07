@@ -1,3 +1,4 @@
+<!-- based on lecture notes of professor Nat Tuck -->
 <%= form_for @changeset, @action, fn f -> %>
 <%= if @changeset.action do %>
 <div class="alert alert-danger">

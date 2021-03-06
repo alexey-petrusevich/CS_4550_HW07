@@ -1,3 +1,4 @@
+# based on lecture notes of professor Nat Tuck
 defmodule EventAppWeb.UserController do
   use EventAppWeb, :controller
 
