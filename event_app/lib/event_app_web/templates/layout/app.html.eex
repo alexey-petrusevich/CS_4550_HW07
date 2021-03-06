@@ -48,7 +48,9 @@
             <div class="col my-2">
                 <p><%= link "Register", to: Routes.user_path(@conn, :new) %></p>
             </div>
-
+            <div class="col my-2">
+                <p><%= link "Create New Event", to: Routes.event_path(@conn, :new) %></p>
+            </div>
             <% end %>
         </div>
 
