@@ -1,0 +1,36 @@
+
+Web Dev Spring 2021 HW07 Status
+
+Answer the following questions:
+
+
+1. What's your name?
+Alexey Petrusevich
+
+
+2. What's the URL of the github repo with your work for this HW?
+https://github.com/alexey-petrusevich/CS_4550_HW07
+
+
+3. What's the URL that you deployed to?
+http://events.quickjohnny.art/
+
+
+4. Is your app functionality complete? If not, what's missing?
+Everything except for bootstrap datepicker - a "native" date time picker is used instead.
+
+
+5. Is your app properly deployed? If not, what went wrong?
+Properly deployed
+
+
+6. If you would like the deployment for an old homework to be reconsidered, what
+are the links to your Inkfish submission and deployed site?
+Inkfish Submission --> https://inkfish.ntuck-neu.site/grades/6315
+Deployed Site --> http://hw03.quickjohnny.art/
+I lost points on incorrect mention of the host URL. Other homework require change of source code.
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Development
+ - Deployment
+ - Submission
