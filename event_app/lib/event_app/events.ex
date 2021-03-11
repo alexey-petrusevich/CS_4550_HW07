@@ -102,4 +102,10 @@ defmodule EventApp.Events do
   def change_event(%Event{} = event, attrs \\ %{}) do
     Event.changeset(event, attrs)
   end
+
+  # Retrieves all the events from the repo and preloads them
+  def list_events do
+    Repo.all(Event)
+    |> Repo.preload(:user)
+  end
 end

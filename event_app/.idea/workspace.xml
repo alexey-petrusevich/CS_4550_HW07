@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app/events.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/events.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app/events/event.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/events/event.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app/users/user.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/users/user.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20210304024903_create_events.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20210304024903_create_events.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1pGqC5DRjHRRBxyWhziGJ9yL1UQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
