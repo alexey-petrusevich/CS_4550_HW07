@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/event_app/application.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/application.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app/events.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/events.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app/events/event.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/events/event.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app/users.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/users.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app/users/user.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/users/user.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/page_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/page_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/session_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/session_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/endpoint.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/endpoint.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/plugs/fetch_session.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/plugs/fetch_session.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/router.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/form.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20210304022236_create_users.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20210304022236_create_users.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20210304024903_create_events.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20210304024903_create_events.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

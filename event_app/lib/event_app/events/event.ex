@@ -11,7 +11,7 @@ defmodule EventApp.Events.Event do
     field :name, :string
     field :responses, {:map, :integer}
     field :updates, {:array, :string}
-
+    belongs_to :user, EventApp.Users.User
     timestamps()
   end
 
@@ -20,6 +20,6 @@ defmodule EventApp.Events.Event do
     IO.inspect("in events.changeSet")
     event
     |> cast(attrs, [:name, :date, :description, :link, :updates, :responses, :comments])
-    |> validate_required([:name, :date, :description, :link])
+    |> validate_required([:name, :description])
   end
 end

@@ -23,10 +23,17 @@
             -->
             <!-- If connections stores info about current user -->
             <%= if @conn.assigns[:current_user] do %>
-            <div class="col">
-                User: <%= @current_user.name %> |
-                <%= link("Logout", to: Routes.session_path(@conn, :delete),
+            <div class="row">
+                <div class="col">
+                    User: <%= @current_user.name %> |
+                    <%= link("Logout", to: Routes.session_path(@conn, :delete),
               method: :delete) %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p><%= link "Create New Event", to: Routes.event_path(@conn, :new) %></p>
+                </div>
             </div>
 
             <% else %>
@@ -43,15 +50,12 @@
                 </div>
                 <%= submit "Login", class: "btn btn-secondary" %>
 
-
                 <% end %>
             </div>
             <div class="col my-2">
                 <p><%= link "Register", to: Routes.user_path(@conn, :new) %></p>
             </div>
-            <div class="col my-2">
-                <p><%= link "Create New Event", to: Routes.event_path(@conn, :new) %></p>
-            </div>
+
             <% end %>
         </div>
 
