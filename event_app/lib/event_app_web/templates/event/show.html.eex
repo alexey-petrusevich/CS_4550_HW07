@@ -19,23 +19,8 @@
     </li>
 
     <li>
-        <strong>Link:</strong>
-        <%= @event.link %>
-    </li>
-
-    <li>
-        <strong>Updates:</strong>
-        <%= @event.updates %>
-    </li>
-
-    <li>
-        <strong>Responses:</strong>
-        <%= @event.responses %>
-    </li>
-
-    <li>
-        <strong>Comments:</strong>
-        <%= @event.comments %>
+        <strong>Invited:</strong>
+        <%= @event.subscribers %>
     </li>
 
 </ul>

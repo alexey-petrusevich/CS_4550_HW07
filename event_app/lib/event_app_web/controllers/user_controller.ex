@@ -4,6 +4,7 @@ defmodule EventAppWeb.UserController do
 
   alias EventApp.Users
   alias EventApp.Users.User
+  alias EventApp.Photos
 
   # INDEX
   def index(conn, _params) do
@@ -26,7 +27,7 @@ defmodule EventAppWeb.UserController do
     {:ok, hash} = Photos.save_photo(up.filename, up.path)
     # update user params with id and photo_hash
     user_params = user_params
-                  |> Map.put("id", conn.assigns[:current_user].id)
+                  #|> Map.put("id", conn.assigns[:current_user].id)
                   |> Map.put("photo_hash", hash)
 
     case Users.create_user(user_params) do
@@ -91,6 +92,7 @@ defmodule EventAppWeb.UserController do
 
 
   def photo(conn, %{"id" => id}) do
+    IO.inspect("in user controller photo method")
     user = Users.get_user!(id)
     {:ok, _name, data} = Photos.load_photo(user.photo_hash)
     conn

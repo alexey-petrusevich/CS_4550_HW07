@@ -12,56 +12,46 @@
 
 <body>
 <div role="main" class="container">
+    <%= if have_current_user?(@conn) do %>
     <div class="row">
-        <div class="row">
-            <!--
-            <div class="col my-2">
-                <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-                <p><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></p>
-                <% end %>
-            </div>
-            -->
-            <!-- If connections stores info about current user -->
-            <%= if @conn.assigns[:current_user] do %>
-            <div class="row">
-                <div class="col">
-                    User: <%= @current_user.name %> |
-                    <%= link("Logout", to: Routes.session_path(@conn, :delete),
+        <div class="col">
+            User: <%= @current_user.name %> |
+            <%= link("Logout", to: Routes.session_path(@conn, :delete),
               method: :delete) %>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p><%= link "Create New Event", to: Routes.event_path(@conn, :new) %></p>
-                </div>
-            </div>
-
-            <% else %>
-            <div class="col">
-                <%= form_for @conn, Routes.session_path(@conn, :create),
-            [class: "form-inline"], fn f -> %>
-                <div class="row">
-                    <%= label f, :name %>
-                    <%= text_input f, :name, class: "form-control" %>
-                </div>
-                <div class="row">
-                    <%= label f, :email %>
-                    <%= text_input f, :email, class: "form-control" %>
-                </div>
-                <%= submit "Login", class: "btn btn-secondary" %>
-
-                <% end %>
-            </div>
-            <div class="col my-2">
-                <p><%= link "Register", to: Routes.user_path(@conn, :new) %></p>
-            </div>
-
-            <% end %>
         </div>
-
-
-        <%= @inner_content %>
     </div>
+    <div class="row">
+        <div class="col">
+            <p><%= link "Create New Event", to: Routes.event_path(@conn, :new) %></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p><%= link "List Events", to: Routes.event_path(@conn, :index) %></p>
+        </div>
+    </div>
+
+    <% else %>
+    <%= form_for @conn, Routes.session_path(@conn, :create),
+            [class: "form-inline"], fn f -> %>
+    <div class="form-group">
+        <%= label f, :name %>
+        <%= text_input f, :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= label f, :email %>
+        <%= text_input f, :email, class: "form-control" %>
+    </div>
+    <%= submit "Login", class: "btn btn-secondary" %>
+
+    <% end %>
+
+    <div class="col my-2">
+        <p><%= link "Register", to: Routes.user_path(@conn, :new) %></p>
+    </div>
+
+    <% end %>
+    <%= @inner_content %>
 </div>
 </body>
 </html>

@@ -10,9 +10,9 @@
 <%= error_tag f, :post_id %>
 
 <div class="form-group">
-    <%= label f, :body %>
-    <%= textarea f, :body, class: "form-control" %>
-    <%= error_tag f, :body %>
+    <%= label f, :comment %>
+    <%= textarea f, :comment, class: "form-control" %>
+    <%= error_tag f, :comment %>
 </div>
 
 <div>

@@ -7,6 +7,7 @@
             <p>Name:<%= event.name %></p>
             <p>Date:<%= event.date %></p>
             <p>Description:<%= event.description %></p>
+            <p><%= link "Select", to: Routes.event_path(@conn, :show, event.id) %></p>
         </div>
     </div>
 </div>
