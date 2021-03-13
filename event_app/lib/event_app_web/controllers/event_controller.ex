@@ -7,6 +7,9 @@ defmodule EventAppWeb.EventController do
   alias EventApp.Users
   alias EventApp.Users.User
   alias EventAppWeb.Plugs
+  alias EventApp.Comments
+  alias EventApp.Updates
+  alias EventApp.Responses
   plug :fetch_event when action in [:show, :edit, :update, :delete]
   # require login verification for /events/new, /events/edit, /events/create, and /events/update
   # redirect to index if failed to verify
@@ -41,7 +44,7 @@ defmodule EventAppWeb.EventController do
   def is_subscriber(user, event) do
     # list of emails
     subscriber_emails = event.subscribers
-    is_subscriber_helper(subscribers)
+    is_subscriber_helper(subscriber_emails)
   end
 
   # helper method for is_subscriber
@@ -100,13 +103,26 @@ defmodule EventAppWeb.EventController do
   end
 
 
+  def get_subscribers_array(subscribers_str) do
+    String.split(subscribers_str, ",")
+  end
+
   # CREATE
+  # TODO: 1) add processing text_input as comma separated emails
+  # TODO: 2) add link of the event: {hostname}/events/{eventId}
   def create(conn, %{"event" => event_params}) do
     # add user_id to the new post
-    event_params = event_params
-                   |> Map.put("user_id", conn.assigns[:current_user].id)
 
+    subscribers_array = get_subscribers_array(Map.get(event_params, "subscribers"))
+
+    event_params = event_params
+                    # replace string of subscribers with an array
+                   |> Map.put("subscribers", subscribers_array)
+                   |> Map.put("user_id", conn.assigns[:current_user].id)
+                   #|> Map.put("link", System.get_env("hostname") <> "/events/" <> Map.get(event_params, "id"))
+    IO.inspect("creating event")
     case Events.create_event(event_params) do
+
       {:ok, event} ->
         conn
         |> put_flash(:info, "Event created successfully.")

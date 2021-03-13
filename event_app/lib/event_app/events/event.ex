@@ -20,7 +20,7 @@ defmodule EventApp.Events.Event do
   @doc false
   def changeset(event, attrs) do
     event
-    |> cast(attrs, [:name, :date, :description, :link, :subscribers, :user_id, :comments, :responses, :updates])
+    |> cast(attrs, [:name, :date, :description, :link, :subscribers, :user_id])
     |> validate_required([:name, :description, :user_id])
   end
 

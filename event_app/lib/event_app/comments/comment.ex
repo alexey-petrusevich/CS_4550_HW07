@@ -15,7 +15,7 @@ defmodule EventApp.Comments.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:body, :post_id, :user_id])
-    |> validate_required([:body, :post_id, :user_id])
+    |> cast(attrs, [:body, :event_id, :user_id])
+    |> validate_required([:body, :event_id, :user_id])
   end
 end
