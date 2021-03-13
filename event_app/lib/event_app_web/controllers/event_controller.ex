@@ -83,7 +83,15 @@ defmodule EventAppWeb.EventController do
     #event = Events.get_event!(id)
     # retrieve event from the connection (socket)
     event = conn.assigns[:event]
-    render(conn, "show.html", event: event)
+            # and pass it for loading comments
+            |> Events.load_comments()
+
+    comm = %EventApp.Comments.Comment{
+      event_id: event.id,
+      user_id: current_user_id(conn)
+    }
+    new_comment = Comments.change_comment(comm)
+    render(conn, "show.html", event: event, new_comment: new_comment)
   end
 
   # EDIT

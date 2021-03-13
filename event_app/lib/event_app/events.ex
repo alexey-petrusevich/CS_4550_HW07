@@ -108,4 +108,9 @@ defmodule EventApp.Events do
     Repo.all(Event)
     |> Repo.preload(:user)
   end
+
+  # preloads comments for the given event
+  def load_comments(%Event{} = event) do
+    Repo.preload(event, [comments: :user])
+  end
 end

@@ -1,3 +1,4 @@
+<!-- based on lecture notes of professor Nat Tuck -->
 <h1>Show Event</h1>
 
 <ul>
@@ -43,6 +44,26 @@
 is the same as the user_id of this event -->
 <%= if current_user_id?(@conn, @event.user_id) do %>
 <span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>
+<% end %>
+
+<h2>Add Comment</h2>
+<%= if (have_current_user?(@conn)) do %>
+<%= render(
+EventAppWeb.CommentView,
+"form.html",
+changeset: @new_comment,
+action: Routes.comment_path(@conn, :create)
+) %>
+<% end %>
+
+<h2>Comments</h2>
+<%= for comm <- @event.comments do %>
+<div class="card">
+    <div class="card-body">
+        <p>Posted by <%= comm.user.name %></p>
+        <p class="card-text"><%= comm.body %></p>
+    </div>
+</div>
 <% end %>
 
 <span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>

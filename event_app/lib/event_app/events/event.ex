@@ -4,7 +4,6 @@ defmodule EventApp.Events.Event do
   import Ecto.Changeset
 
   schema "events" do
-    field :comments, {:map, :string}
     field :date, :utc_datetime
     field :description, :string
     field :link, :string
@@ -12,12 +11,12 @@ defmodule EventApp.Events.Event do
     field :responses, {:map, :integer}
     field :updates, {:array, :string}
     belongs_to :user, EventApp.Users.User
+    has_many :comments, EventApp.Comments.Comment
     timestamps()
   end
 
   @doc false
   def changeset(event, attrs) do
-    IO.inspect("in events.changeSet")
     event
     |> cast(attrs, [:name, :date, :description, :link, :updates, :responses, :comments, :user_id])
     |> validate_required([:name, :description, :user_id])

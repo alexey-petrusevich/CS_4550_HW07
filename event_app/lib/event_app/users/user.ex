@@ -9,7 +9,7 @@ defmodule EventApp.Users.User do
     field :photo_hash, :string # for storing user photo
     #belongs_to :user, EventApp.Users.User
     has_many :events, EventApp.Events.Event
-
+    has_many :comments, EventApp.Comments.Comment
 
     timestamps()
   end

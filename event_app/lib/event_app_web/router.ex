@@ -22,8 +22,8 @@ defmodule EventAppWeb.Router do
     get "/users/photo:id", UserController, :photo
     resources "/users", UserController
     resources "/events", EventController
-    resources "/sessions", SessionController,
-              only: [:create, :delete], singleton: true
+    resources "/comments", CommentController
+    resources "/sessions", SessionController, only: [:create, :delete], singleton: true
   end
 
   # Other scopes may use custom stacks.

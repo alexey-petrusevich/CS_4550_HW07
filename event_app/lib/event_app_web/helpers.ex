@@ -18,4 +18,10 @@ defmodule EventAppWeb.Helpers do
     # if connection doesn't have user id, user is 'nil' and #false is returned
     user && user.id == user_id
   end
+
+  # returns id of the user stored within given connection (socket)
+  def current_user_id(conn) do
+    user = conn.assigns[:current_user]
+    user && user.id
+  end
 end
