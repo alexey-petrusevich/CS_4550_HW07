@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app/updates/update.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/updates/update.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/update_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/update_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/helpers.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/helpers.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/comment/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/comment/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/response/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/response/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/update/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/update/form.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/user/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/user/index.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +72,7 @@
       <workItem from="1614910138803" duration="3263000" />
       <workItem from="1614965136861" duration="15857000" />
       <workItem from="1615592355217" duration="22634000" />
-      <workItem from="1615639642346" duration="12191000" />
+      <workItem from="1615639642346" duration="16006000" />
     </task>
     <servers />
   </component>

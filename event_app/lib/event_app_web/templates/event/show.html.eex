@@ -2,33 +2,37 @@
 <h1>Show Event</h1>
 
 <ul>
-
     <li>
         <strong>Name:</strong>
         <%= @event.name %>
     </li>
-
     <li>
         <strong>Date:</strong>
         <%= @event.date %>
     </li>
-
     <li>
         <strong>Description:</strong>
         <%= @event.description %>
     </li>
-
     <li>
         <strong>Invited:</strong>
         <%= @event.subscribers %>
     </li>
-
 </ul>
 
-<!-- Show edit button only if current user logged in == check if user info stored in the connection
-is the same as the user_id of this event -->
 <%= if current_user_id?(@conn, @event.user_id) do %>
 <span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>
+<% end %>
+
+
+<%= if (have_current_user?(@conn) && (is_owner?(@conn, @event))) do %>
+<h2>Add Update</h2>
+<%= render(
+EventAppWeb.UpdateView,
+"form.html",
+changeset: @new_update,
+action: Routes.update_path(@conn, :create)
+) %>
 <% end %>
 
 <h2>Add Comment</h2>
@@ -41,7 +45,6 @@ action: Routes.comment_path(@conn, :create)
 ) %>
 <% end %>
 
-<!-- TODO change to satisfy assignment need -->
 <h2>Add Response</h2>
 <%= if (have_current_user?(@conn)) do %>
 <%= render(
@@ -51,21 +54,6 @@ changeset: @new_response,
 action: Routes.response_path(@conn, :create)
 ) %>
 <% end %>
-
-
-<!-- TODO change to satisfy assignment need -->
-<h2>Add Update</h2>
-<%= if (have_current_user?(@conn)) do %>
-<%= render(
-EventAppWeb.UpdateView,
-"form.html",
-changeset: @new_update,
-action: Routes.update_path(@conn, :create)
-) %>
-<% end %>
-
-
-
 
 <h2>Comments</h2>
 <%= for comm <- @event.comments do %>
@@ -77,7 +65,6 @@ action: Routes.update_path(@conn, :create)
 </div>
 <% end %>
 
-<!-- TODO change to satisfy assignment need -->
 <h2>Responses</h2>
 <%= for resp <- @event.responses do %>
 <div class="card">
@@ -88,19 +75,15 @@ action: Routes.update_path(@conn, :create)
 </div>
 <% end %>
 
-
-<!-- TODO change to satisfy assignment need -->
 <h2>Updates</h2>
 <%= for upd <- @event.updates do %>
 <div class="card">
     <div class="card-body">
         <p>Updated by <%= upd.user.name %></p>
-        <p class="card-text"><%= upd.response %></p>
+        <p class="card-text"><%= upd.update %></p>
     </div>
 </div>
 <% end %>
-
-
 
 
 <span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>

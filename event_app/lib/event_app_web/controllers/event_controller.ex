@@ -14,8 +14,8 @@ defmodule EventAppWeb.EventController do
   # require login verification for /events/new, /events/edit, /events/create, and /events/update
   # redirect to index if failed to verify
   plug Plugs.RequireUser when action in [:new, :create, :edit, :update, :delete, :show]
-  plug :require_owner when action in [:edit, :update, :delete, :show]
-  plug :require_subscriber when action in [:show]
+  plug :require_owner when action in [:edit, :update, :delete]
+  plug :require_subscriber_or_owner when action in [:show]
 
 
   # checks if the event stored in the conection (socket) has the same user id
@@ -60,14 +60,18 @@ defmodule EventAppWeb.EventController do
         is_subscriber_helper(tl(subscriber_emails))
       end
     end
+  end
 
+  # returns true if the given user is the owner of the event
+  def is_owner(user, event) do
+    user.id == event.user_id
   end
 
   # same as require_owner, but requires to be a subscriber
-  def require_subscriber(conn, _args) do
+  def require_subscriber_or_owner(conn, _args) do
     user = conn.assigns[:current_user]
     event = conn.assigns[:event]
-    if (is_subscriber(user, event)) do
+    if (is_subscriber(user, event) || is_owner(user, event)) do
       conn
     else
       conn
@@ -116,10 +120,10 @@ defmodule EventAppWeb.EventController do
     subscribers_array = get_subscribers_array(Map.get(event_params, "subscribers"))
 
     event_params = event_params
-                    # replace string of subscribers with an array
+                   # replace string of subscribers with an array
                    |> Map.put("subscribers", subscribers_array)
                    |> Map.put("user_id", conn.assigns[:current_user].id)
-                   #|> Map.put("link", System.get_env("hostname") <> "/events/" <> Map.get(event_params, "id"))
+    #|> Map.put("link", System.get_env("hostname") <> "/events/" <> Map.get(event_params, "id"))
     IO.inspect("creating event")
     case Events.create_event(event_params) do
 

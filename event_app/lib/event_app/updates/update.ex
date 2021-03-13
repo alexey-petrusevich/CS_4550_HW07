@@ -15,7 +15,7 @@ defmodule EventApp.Updates.Update do
   @doc false
   def changeset(update, attrs) do
     update
-    |> cast(attrs, [:update])
-    |> validate_required([:update])
+    |> cast(attrs, [:update, :event_id, :user_id])
+    |> validate_required([:update, :event_id, :user_id])
   end
 end

@@ -2,6 +2,7 @@
 
 <div class="container">
     <%= for event <- @events do %>
+    <%= if is_subscriber?(@conn, event) do %>
     <div class="card">
         <div class="card-body">
             <p>Name:<%= event.name %></p>
@@ -10,6 +11,7 @@
             <p><%= link "Select", to: Routes.event_path(@conn, :show, event.id) %></p>
         </div>
     </div>
+    <% end %>
 </div>
 
 <% end %>
