@@ -3,7 +3,7 @@ defmodule EventApp.Comments.Comment do
   import Ecto.Changeset
 
   schema "comments" do
-    field :body, :string
+    field :comment, :string
     #field :event_id, :id
     #field :user_id, :id
     belongs_to :event, EventApp.Events.Event
@@ -15,7 +15,7 @@ defmodule EventApp.Comments.Comment do
   @doc false
   def changeset(comment, attrs) do
     comment
-    |> cast(attrs, [:body, :event_id, :user_id])
-    |> validate_required([:body, :event_id, :user_id])
+    |> cast(attrs, [:comment, :event_id, :user_id])
+    |> validate_required([:comment, :event_id, :user_id])
   end
 end

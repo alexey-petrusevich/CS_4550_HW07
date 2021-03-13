@@ -3,7 +3,7 @@ defmodule EventApp.Repo.Migrations.CreateComments do
 
   def change do
     create table(:comments) do
-      add :body, :text, null: false, default: ""
+      add :comment, :text, null: false, default: ""
       add :event_id, references(:events, on_delete: :nothing), null: false
       add :user_id, references(:users, on_delete: :nothing), null: false
 
