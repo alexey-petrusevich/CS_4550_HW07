@@ -39,6 +39,7 @@ export SECRET_KEY_BASE
 DB_PASS=$(cat "$CFGD/db_pass")
 export DATABASE_URL=ecto://event_app:$DB_PASS@localhost/event_app_prod
 
+mix ecto.reset
 mix ecto.migrate
 
 npm install --prefix ./assets
