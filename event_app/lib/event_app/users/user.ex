@@ -6,7 +6,10 @@ defmodule EventApp.Users.User do
   schema "users" do
     field :email, :string
     field :name, :string
+    field :photo_hash, :string # for storing user photo
+    belongs_to :user, EventApp.Users.User
     has_many :events, EventApp.Events.Event
+
 
     timestamps()
   end
@@ -14,7 +17,9 @@ defmodule EventApp.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :email])
-    |> validate_required([:name, :email])
+    # cast fields to potgresql format
+    |> cast(attrs, [:name, :email, :photo_hash])
+    # validate null: false, etc.
+    |> validate_required([:name, :email, :photo_hash])
   end
 end

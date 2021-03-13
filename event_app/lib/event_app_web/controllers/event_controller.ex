@@ -22,7 +22,7 @@ defmodule EventAppWeb.EventController do
       # else ids are different --> error
       conn
       |> put_flash(:error, "That isn't yours.")
-      # redirect to the index page
+        # redirect to the index page
       |> redirect(to: Routes.page_path(conn, :index))
       |> halt()
     end
@@ -63,7 +63,7 @@ defmodule EventAppWeb.EventController do
 
     # add user_id to the new post
     event_params = event_params
-                   |> Map.put("user_id", conn.assigns[current:user].id)
+                   |> Map.put("user_id", conn.assigns[:current_user].id)
 
     case Events.create_event(event_params) do
       {:ok, event} ->
