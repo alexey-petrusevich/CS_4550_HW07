@@ -4,6 +4,8 @@
     </div>
 </div>
 
+
+
 <%= if have_current_user?(@conn) do %>
 <p><%= link("New Event", to: Routes.post_path(@conn, :new)) %></p>
 <% end %>

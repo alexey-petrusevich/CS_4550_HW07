@@ -2,15 +2,21 @@
 
 <ul>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @user.name %>
-  </li>
+    <li>
+        <strong>Name:</strong>
+        <%= @user.name %>
+    </li>
 
-  <li>
-    <strong>Email:</strong>
-    <%= @user.email %>
-  </li>
+    <li>
+        <strong>Email:</strong>
+        <%= @user.email %>
+    </li>
+
+    <li>
+        <div>
+            <img src="<%= Routes.post_path(@conn, :photo, @post) %>" alt=""/>
+        </div>
+    </li>
 
 </ul>
 
