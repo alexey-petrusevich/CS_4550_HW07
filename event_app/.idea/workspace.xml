@@ -4,13 +4,8 @@
     <list default="true" id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/comment/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/comment/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/show.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/layout/app.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/page/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/page/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/user/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/user/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/user/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/user/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/user/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/user/index.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +62,7 @@
       <workItem from="1614910138803" duration="3263000" />
       <workItem from="1614965136861" duration="15857000" />
       <workItem from="1615592355217" duration="22634000" />
-      <workItem from="1615639642346" duration="10860000" />
+      <workItem from="1615639642346" duration="12191000" />
     </task>
     <servers />
   </component>

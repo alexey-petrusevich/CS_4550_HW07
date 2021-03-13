@@ -5,6 +5,10 @@ defmodule EventAppWeb.UserController do
   alias EventApp.Users
   alias EventApp.Users.User
   alias EventApp.Photos
+  alias EventAppWeb.Plugs
+  plug Plugs.RequireUser when action in [:edit, :update, :delete, :show]
+  plug :require_owner when action in [:edit, :update, :delete, :show]
+
 
   # INDEX
   def index(conn, _params) do
@@ -98,5 +102,19 @@ defmodule EventAppWeb.UserController do
     conn
     |> put_resp_content_type("image/jpeg")
     |> send_resp(200, data)
+  end
+
+
+  def require_owner(conn, _args) do
+    user = conn.assigns[:current_user]
+    event = conn.assigns[:event]
+    if (user.id == event.user_id) do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You're not the owner of this profile")
+      |> redirect(to: Routes.page_path(conn, :index))
+      |> halt()
+    end
   end
 end
