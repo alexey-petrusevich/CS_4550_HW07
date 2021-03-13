@@ -113,4 +113,10 @@ defmodule EventApp.Events do
   def load_comments(%Event{} = event) do
     Repo.preload(event, [comments: :user])
   end
+
+
+  # preloads responses for the given event
+  def load_responses(%Event{} = event) do
+    Repo.preload(event, [responses: :user])
+  end
 end

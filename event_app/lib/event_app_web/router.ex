@@ -23,6 +23,7 @@ defmodule EventAppWeb.Router do
     resources "/users", UserController
     resources "/events", EventController
     resources "/comments", CommentController
+    resources "/responses", ResponseController
     resources "/sessions", SessionController, only: [:create, :delete], singleton: true
   end
 

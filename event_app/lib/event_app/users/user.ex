@@ -10,7 +10,7 @@ defmodule EventApp.Users.User do
     #belongs_to :user, EventApp.Users.User
     has_many :events, EventApp.Events.Event
     has_many :comments, EventApp.Comments.Comment
-
+    has_many :responses, EventApp.Responses.Response
     timestamps()
   end
 

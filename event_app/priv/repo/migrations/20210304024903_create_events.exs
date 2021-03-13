@@ -9,8 +9,7 @@ defmodule EventApp.Repo.Migrations.CreateEvents do
       add :description, :text, null: false
       add :link, :string, null: true
       add :updates, {:array, :text}, null: true
-      add :responses, {:map, :integer}, null: true
-#      foreign key that references users table
+      # foreign key that references users table
       add :user_id, references(:users), null: false
       timestamps()
     end

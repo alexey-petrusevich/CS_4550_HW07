@@ -85,13 +85,23 @@ defmodule EventAppWeb.EventController do
     event = conn.assigns[:event]
             # and pass it for loading comments
             |> Events.load_comments()
+            # load event responses
+            |> Events.load_responses()
+
 
     comm = %EventApp.Comments.Comment{
       event_id: event.id,
       user_id: current_user_id(conn)
     }
     new_comment = Comments.change_comment(comm)
-    render(conn, "show.html", event: event, new_comment: new_comment)
+
+    resp = %EventApp.Responses.Response{
+      event_id: event.id,
+      user_id: current_user_id(conn)
+    }
+    new_response = Responses.change_response(resp)
+
+    render(conn, "show.html", event: event, new_comment: new_comment, new_response: new_response)
   end
 
   # EDIT

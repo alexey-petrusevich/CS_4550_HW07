@@ -56,6 +56,18 @@ action: Routes.comment_path(@conn, :create)
 ) %>
 <% end %>
 
+<!-- TODO change to satisfy assignment need -->
+<h2>Add Response</h2>
+<%= if (have_current_user?(@conn)) do %>
+<%= render(
+EventAppWeb.ResponseView,
+"form.html",
+changeset: @new_response,
+action: Routes.response_path(@conn, :create)
+) %>
+<% end %>
+
+
 <h2>Comments</h2>
 <%= for comm <- @event.comments do %>
 <div class="card">
@@ -65,5 +77,18 @@ action: Routes.comment_path(@conn, :create)
     </div>
 </div>
 <% end %>
+
+<!-- TODO change to satisfy assignment need -->
+<h2>Responses</h2>
+<%= for resp <- @response.comments do %>
+<div class="card">
+    <div class="card-body">
+        <p>Responded by <%= resp.user.name %></p>
+        <p class="card-text"><%= resp.response %></p>
+    </div>
+</div>
+<% end %>
+
+
 
 <span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>
