@@ -1,0 +1,26 @@
+<h1>Listing Updates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Update</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for update <- @updates do %>
+    <tr>
+      <td><%= update.update %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.update_path(@conn, :show, update) %></span>
+        <span><%= link "Edit", to: Routes.update_path(@conn, :edit, update) %></span>
+        <span><%= link "Delete", to: Routes.update_path(@conn, :delete, update), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Update", to: Routes.update_path(@conn, :new) %></span>

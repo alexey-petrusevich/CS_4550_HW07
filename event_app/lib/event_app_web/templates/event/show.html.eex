@@ -68,6 +68,20 @@ action: Routes.response_path(@conn, :create)
 <% end %>
 
 
+<!-- TODO change to satisfy assignment need -->
+<h2>Add Update</h2>
+<%= if (have_current_user?(@conn)) do %>
+<%= render(
+EventAppWeb.UpdateView,
+"form.html",
+changeset: @new_update,
+action: Routes.update_path(@conn, :create)
+) %>
+<% end %>
+
+
+
+
 <h2>Comments</h2>
 <%= for comm <- @event.comments do %>
 <div class="card">
@@ -80,7 +94,7 @@ action: Routes.response_path(@conn, :create)
 
 <!-- TODO change to satisfy assignment need -->
 <h2>Responses</h2>
-<%= for resp <- @response.comments do %>
+<%= for resp <- @event.responses do %>
 <div class="card">
     <div class="card-body">
         <p>Responded by <%= resp.user.name %></p>
@@ -88,6 +102,19 @@ action: Routes.response_path(@conn, :create)
     </div>
 </div>
 <% end %>
+
+
+<!-- TODO change to satisfy assignment need -->
+<h2>Updates</h2>
+<%= for upd <- @event.updates do %>
+<div class="card">
+    <div class="card-body">
+        <p>Updated by <%= upd.user.name %></p>
+        <p class="card-text"><%= upd.response %></p>
+    </div>
+</div>
+<% end %>
+
 
 
 

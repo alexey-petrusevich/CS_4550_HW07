@@ -119,4 +119,9 @@ defmodule EventApp.Events do
   def load_responses(%Event{} = event) do
     Repo.preload(event, [responses: :user])
   end
+
+  # preloads updates for the given event
+  def load_updates(%Event{} = event) do
+    Repo.preload(event, [updates: :user])
+  end
 end

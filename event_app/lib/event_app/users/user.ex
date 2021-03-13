@@ -11,6 +11,7 @@ defmodule EventApp.Users.User do
     has_many :events, EventApp.Events.Event
     has_many :comments, EventApp.Comments.Comment
     has_many :responses, EventApp.Responses.Response
+    has_many :updates, EventApp.Updates.Update
     timestamps()
   end
 

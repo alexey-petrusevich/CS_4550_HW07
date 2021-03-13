@@ -1,16 +1,16 @@
-defmodule EventApp.Repo.Migrations.CreateResponses do
+defmodule EventApp.Repo.Migrations.CreateUpdates do
   use Ecto.Migration
 
   def change do
-    create table(:responses) do
-      add :response, :integer, null: false, default: 0
+    create table(:updates) do
+      add :update, :text, null: false, default: ""
       add :event_id, references(:events, on_delete: :nothing), null: false
       add :user_id, references(:users, on_delete: :nothing), null: false
 
       timestamps()
     end
 
-    create index(:responses, [:event_id])
-    create index(:responses, [:user_id])
+    create index(:updates, [:event_id])
+    create index(:updates, [:user_id])
   end
 end
