@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="71638a65-1793-47c2-b826-502e7560ac6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app/comments/comment.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app/comments/comment.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/comment_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/comment_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/comment/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/comment/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/event_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/controllers/user_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/index.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/event/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/event/show.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20210313035510_create_comments.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/migrations/20210313035510_create_comments.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/event_app_web/templates/response/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/event_app_web/templates/response/form.html.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

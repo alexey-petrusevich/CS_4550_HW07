@@ -49,10 +49,10 @@ defmodule EventAppWeb.EventController do
 
   # helper method for is_subscriber
   def is_subscriber_helper(subscriber_emails) do
-    email = hd(subscriber_emails)
     if (length(subscriber_emails) == 0) do
       false
     else
+      email = hd(subscriber_emails)
       user = Users.get_user_by_email(email)
       if (user != nil && email == user.email) do
         true

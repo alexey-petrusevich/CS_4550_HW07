@@ -10,7 +10,7 @@
 
 <div class="form-group">
     <%= label f, :response %>
-    <%= number_input f, :response, class: "form-control" %>
+    <%= select f, :response, yes: 3, no: 2, maybe: 1, none: 0 %>
     <%= error_tag f, :response %>
 </div>
 

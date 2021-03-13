@@ -2,7 +2,7 @@
 
 <div class="container">
     <%= for event <- @events do %>
-    <%= if is_subscriber?(@conn, event) do %>
+    <%= if is_subscriber?(@conn, event) || is_owner?(@conn, event) do %>
     <div class="card">
         <div class="card-body">
             <p>Name:<%= event.name %></p>

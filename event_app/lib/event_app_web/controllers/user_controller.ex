@@ -7,7 +7,7 @@ defmodule EventAppWeb.UserController do
   alias EventApp.Photos
   alias EventAppWeb.Plugs
   plug Plugs.RequireUser when action in [:edit, :update, :delete, :show]
-  plug :require_owner when action in [:edit, :update, :delete, :show]
+  #plug :require_owner when action in [:edit, :update, :delete, :show]
 
 
   # INDEX

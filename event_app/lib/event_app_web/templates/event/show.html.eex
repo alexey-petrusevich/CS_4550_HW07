@@ -19,6 +19,8 @@
         <%= @event.subscribers %>
     </li>
 </ul>
+<img src="<%= Routes.user_path(@conn, :photo, current_user_id(@conn)) %>" alt="">
+
 
 <%= if current_user_id?(@conn, @event.user_id) do %>
 <span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>
@@ -70,7 +72,12 @@ action: Routes.response_path(@conn, :create)
 <div class="card">
     <div class="card-body">
         <p>Responded by <%= resp.user.name %></p>
-        <p class="card-text"><%= resp.response %></p>
+        <p class="card-text">
+            <%= if (resp.response == 3), do: "yes"  %>
+            <%= if (resp.response == 2), do: "no"  %>
+            <%= if (resp.response == 1), do: "maybe" %>
+            <%= if (resp.response == 0), do: "no response"  %>
+        </p>
     </div>
 </div>
 <% end %>
