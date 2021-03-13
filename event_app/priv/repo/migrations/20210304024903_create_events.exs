@@ -4,10 +4,11 @@ defmodule EventApp.Repo.Migrations.CreateEvents do
 
   def change do
     create table(:events) do
-      add :name, :string, null: false
+      add :name, :string, null: false, default: ""
       add :date, :utc_datetime, null: true
-      add :description, :text, null: false
-      add :link, :string, null: true
+      add :description, :text, null: false, default: ""
+      add :link, :string, null: false, default: ""
+      add :subscrbers, {:array, :string}, null: false
       # foreign key that references users table
       add :user_id, references(:users), null: false
       timestamps()

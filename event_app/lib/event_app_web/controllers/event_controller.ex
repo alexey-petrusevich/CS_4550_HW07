@@ -4,12 +4,19 @@ defmodule EventAppWeb.EventController do
 
   alias EventApp.Events
   alias EventApp.Events.Event
+  alias EventApp.Users
+  alias EventApp.Users.User
   alias EventAppWeb.Plugs
   plug :fetch_event when action in [:show, :edit, :update, :delete]
-  plug Plugs.RequireUser when action in [:new, :edit, :update, :delete]
-  plug :require_owner when action in [:edit, :update, :delete]
+  # require login verification for /events/new, /events/edit, /events/create, and /events/update
+  # redirect to index if failed to verify
+  plug Plugs.RequireUser when action in [:new, :create, :edit, :update, :delete, :show]
+  plug :require_owner when action in [:edit, :update, :delete, :show]
+  plug :require_subscriber when action in [:show]
 
 
+  # checks if the event stored in the conection (socket) has the same user id
+  # as the user id stored in the connection (socket)
   def require_owner(conn, _args) do
     # retrieve user info from connection (socket)
     user = conn.assigns[:current_user]
@@ -30,6 +37,44 @@ defmodule EventAppWeb.EventController do
     end
   end
 
+  # returns true if the given user is a subscriber f the given event
+  def is_subscriber(user, event) do
+    # list of emails
+    subscriber_emails = event.subscribers
+    is_subscriber_helper(subscribers)
+  end
+
+  # helper method for is_subscriber
+  def is_subscriber_helper(subscriber_emails) do
+    email = hd(subscriber_emails)
+    if (length(subscriber_emails) == 0) do
+      false
+    else
+      user = Users.get_user_by_email(email)
+      if (user != nil && email == user.email) do
+        true
+      else
+        is_subscriber_helper(tl(subscriber_emails))
+      end
+    end
+
+  end
+
+  # same as require_owner, but requires to be a subscriber
+  def require_subscriber(conn, _args) do
+    user = conn.assigns[:current_user]
+    event = conn.assigns[:event]
+    if (is_subscriber(user, event)) do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You are not a subscriber to this event")
+      |> redirect(to: Routes.page_path(conn, :index))
+      |> halt()
+    end
+  end
+
+
   # fetches an event given the connection (with stored user id)
   def fetch_event(conn, _args) do
     # retrieve event from the connection (socket)
@@ -41,15 +86,12 @@ defmodule EventAppWeb.EventController do
   end
 
 
-  # require login verification for /events/new, /events/edit, /events/create, and /events/update
-  # redirect to index if failed to verify
-  plug Plugs.RequireUser when action in [:new, :edit, :create, :update]
-
   # INDEX
   def index(conn, _params) do
     events = Events.list_events()
     render(conn, "index.html", events: events)
   end
+
 
   # NEW
   def new(conn, _params) do
@@ -57,12 +99,9 @@ defmodule EventAppWeb.EventController do
     render(conn, "new.html", changeset: changeset)
   end
 
+
   # CREATE
   def create(conn, %{"event" => event_params}) do
-    IO.inspect(event_params)
-    IO.inspect("added value to map")
-    IO.inspect(event_params)
-
     # add user_id to the new post
     event_params = event_params
                    |> Map.put("user_id", conn.assigns[:current_user].id)
@@ -78,6 +117,7 @@ defmodule EventAppWeb.EventController do
     end
   end
 
+
   # SHOW
   def show(conn, %{"id" => id}) do
     #event = Events.get_event!(id)
@@ -89,7 +129,6 @@ defmodule EventAppWeb.EventController do
             |> Events.load_responses()
       # load event updates
             |> Events.load_updates()
-
 
     comm = %EventApp.Comments.Comment{
       event_id: event.id,
@@ -109,7 +148,6 @@ defmodule EventAppWeb.EventController do
     }
     new_update = Updates.change_update(resp)
 
-
     render(
       conn,
       "show.html",
@@ -120,6 +158,7 @@ defmodule EventAppWeb.EventController do
     )
   end
 
+
   # EDIT
   def edit(conn, %{"id" => id}) do
     #event = Events.get_event!(id)
@@ -128,6 +167,7 @@ defmodule EventAppWeb.EventController do
     changeset = Events.change_event(event)
     render(conn, "edit.html", event: event, changeset: changeset)
   end
+
 
   # UPDATE
   def update(conn, %{"id" => id, "event" => event_params}) do
@@ -145,6 +185,7 @@ defmodule EventAppWeb.EventController do
         render(conn, "edit.html", event: event, changeset: changeset)
     end
   end
+
 
   # DELETE
   def delete(conn, %{"id" => id}) do

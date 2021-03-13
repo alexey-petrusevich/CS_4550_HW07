@@ -111,6 +111,10 @@ defmodule EventApp.Users do
     Repo.get_by(User, name: name)
   end
 
+  def get_user_by_email(email) do
+    Repo.get_by(User, email: email)
+  end
+
   def get_user_by_name_and_email(name, email) do
     # fetches a single result from Repo; nil if not found
     from(u in User, where: u.name == ^name and u.email == ^email)
