@@ -37,7 +37,7 @@ defmodule EventApp.Photos do
   end
 
   def read_meta(hash) do
-    with {:ok, data} <- File.read(mta_path(hash)),
+    with {:ok, data} <- File.read(meta_path(hash)),
          {:ok, meta} <- Jason.decode(data, keys: :atoms)
       do
       meta

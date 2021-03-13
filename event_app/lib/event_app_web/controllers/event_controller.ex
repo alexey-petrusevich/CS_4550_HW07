@@ -6,7 +6,9 @@ defmodule EventAppWeb.EventController do
   alias EventApp.Events.Event
   alias EventAppWeb.Plugs
   plug :fetch_event when action in [:show, :edit, :update, :delete]
+  plug Plugs.RequireUser when action in [:new, :edit, :update, :delete]
   plug :require_owner when action in [:edit, :update, :delete]
+
 
   def require_owner(conn, _args) do
     # retrieve user info from connection (socket)

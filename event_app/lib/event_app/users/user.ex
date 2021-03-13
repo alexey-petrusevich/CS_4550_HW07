@@ -7,7 +7,7 @@ defmodule EventApp.Users.User do
     field :email, :string
     field :name, :string
     field :photo_hash, :string # for storing user photo
-    belongs_to :user, EventApp.Users.User
+    #belongs_to :user, EventApp.Users.User
     has_many :events, EventApp.Events.Event
 
 

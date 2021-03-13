@@ -13,10 +13,11 @@
 alias EventApp.Repo
 alias EventApp.Users.User
 alias EventApp.Events.Event
+alias EventApp.Photos
 
 defmodule Inject do
   def photo(name) do
-    photos = Application.app_dir(:photo_blog, "priv/photos")
+    photos = Application.app_dir(:event_app, "priv/photos")
     path = Path.join(photos, name)
     {:ok, hash} = Photos.save_photo(name, path)
     hash

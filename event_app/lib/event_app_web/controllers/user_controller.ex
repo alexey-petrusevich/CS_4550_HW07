@@ -24,9 +24,9 @@ defmodule EventAppWeb.UserController do
     up = user_params["photo"]
     # save photo
     {:ok, hash} = Photos.save_photo(up.filename, up.path)
-    # update user params with user_id and photo_hash
+    # update user params with id and photo_hash
     user_params = user_params
-                  |> Map.put("user_id", conn.assigns[:current_user].id)
+                  |> Map.put("id", conn.assigns[:current_user].id)
                   |> Map.put("photo_hash", hash)
 
     case Users.create_user(user_params) do
@@ -42,6 +42,7 @@ defmodule EventAppWeb.UserController do
 
   # SHOW
   def show(conn, %{"id" => id}) do
+    IO.inspect("show")
     user = Users.get_user!(id)
     render(conn, "show.html", user: user)
   end
@@ -58,7 +59,7 @@ defmodule EventAppWeb.UserController do
     user = Users.get_user!(id)
 
     # retrieve photo from user_params
-    up = event_params["photo"]
+    up = user_params["photo"]
 
     user_params = if (up) do
       {:ok, hash} = Photos.save_photo(up.filename, up.path)

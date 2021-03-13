@@ -5,6 +5,7 @@ defmodule EventAppWeb.Plugs.FetchSession do
   def init(args), do: args
 
   def call(conn, _args) do
+    # here get_user takes :user_id stored in session
     user = EventApp.Users.get_user(get_session(conn, :user_id) || -1)
     if user do
       assign(conn, :current_user, user)
