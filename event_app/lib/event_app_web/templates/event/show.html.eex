@@ -2,42 +2,47 @@
 
 <ul>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @event.name %>
-  </li>
+    <li>
+        <strong>Name:</strong>
+        <%= @event.name %>
+    </li>
 
-  <li>
-    <strong>Date:</strong>
-    <%= @event.date %>
-  </li>
+    <li>
+        <strong>Date:</strong>
+        <%= @event.date %>
+    </li>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @event.description %>
-  </li>
+    <li>
+        <strong>Description:</strong>
+        <%= @event.description %>
+    </li>
 
-  <li>
-    <strong>Link:</strong>
-    <%= @event.link %>
-  </li>
+    <li>
+        <strong>Link:</strong>
+        <%= @event.link %>
+    </li>
 
-  <li>
-    <strong>Updates:</strong>
-    <%= @event.updates %>
-  </li>
+    <li>
+        <strong>Updates:</strong>
+        <%= @event.updates %>
+    </li>
 
-  <li>
-    <strong>Responses:</strong>
-    <%= @event.responses %>
-  </li>
+    <li>
+        <strong>Responses:</strong>
+        <%= @event.responses %>
+    </li>
 
-  <li>
-    <strong>Comments:</strong>
-    <%= @event.comments %>
-  </li>
+    <li>
+        <strong>Comments:</strong>
+        <%= @event.comments %>
+    </li>
 
 </ul>
 
+<!-- Show edit button only if current user logged in == check if user info stored in the connection
+is the same as the user_id of this event -->
+<%= if current_user_id?(@conn, @event.user_id) do %>
 <span><%= link "Edit", to: Routes.event_path(@conn, :edit, @event) %></span>
+<% end %>
+
 <span><%= link "Back", to: Routes.event_path(@conn, :index) %></span>
